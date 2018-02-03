@@ -21,6 +21,7 @@ window.onload = function() {
     let framesPerSecond = 30;
     setInterval(function() {
         movePlayer();
+        fire();
         renderCanvas();
     }, 1000/framesPerSecond);
 
@@ -60,10 +61,10 @@ function movePlayer() {
         playerUpperBaseY = playerUpperBaseY - moveIncrement;
     }
 
-    if(key[32]) {
-        console.log('FIRE!!!!!!!');
-        // fire();
-    }
+    // if(key[32]) {
+    //     console.log('FIRE!!!!!!!');
+    //     fire();
+    // }
 
     //restrict player from going outside of screen
     if(playerCenterX >= canvas.width) {
@@ -90,13 +91,16 @@ function movePlayer() {
     }
 }
 
-// function fire() {
-//     for (i = playerCenterX; i<canvas.width; i + 10) {
-//         blasterPositionX = blasterPositionX + i;
-//     }
-// }
+function fire() {
+    if(key[32]) {
+        console.log('fired');
+        // for (let i = playerCenterX; i < canvas.width; i + 100) {
+        //     blasterPositionX = blasterPositionX + i;
+        // }
+    }
+}
 
-function renderCanvas() {
+function renderCanvas() { //display game area and render assets
 
     // canvas.width = window.innerWidth;
     // canvas.height = window.innerHeight;
